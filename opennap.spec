@@ -1,5 +1,5 @@
-Summary:	OpenNap is a version of the proprietary Napster server
-Summary(pl):	OpenNap jest alternatyw± komercyjnego serwera Napster
+Summary:	OpenNap is a GNU version of the proprietary Napster server
+Summary(pl):	OpenNap jest powszechn± alternatyw± komercyjnego serwera Napster
 Name:		opennap
 Version:	0.41
 Release:	1
@@ -35,7 +35,7 @@ mo¿liwo¶æ po³±czeñ miêdzyserwerowych.
 
 %build
 %configure \
-	--datadir=%{_sysconfdir}/opennap \
+	--datadir=%{_sysconfdir} \
 	--with-uid=opennap \
 	--with-gid=opennap \
 	--enable-resume \
@@ -51,6 +51,8 @@ install -d $RPM_BUILD_ROOT%{_sysconfdir}/opennap
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm $RPM_BUILD_ROOT%{_sbindir}/setup
 
 install	sample.block	$RPM_BUILD_ROOT%{_sysconfdir}/opennap/block
 install	sample.channels	$RPM_BUILD_ROOT%{_sysconfdir}/opennap/channels
