@@ -5,8 +5,6 @@ Version:	0.42
 Release:	2
 License:	GPL
 Group:		Networking/Daemons
-Group(de):	Netzwerkwesen/Server
-Group(pl):	Sieciowe/Serwery
 URL:		http://opennap.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/opennap/%{name}-%{version}.tar.gz
 Source1:	%{name}.init
