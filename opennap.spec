@@ -6,6 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		Networking/Daemons
 Source0:	http://dl.sourceforge.net/opennap/%{name}-%{version}.tar.gz
+# Source0-md5:	197ba3a0c93e11a0a03dc1d5ae14aa33
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Patch0:		%{name}-no_libnsl.patch
