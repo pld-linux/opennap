@@ -23,13 +23,13 @@ protocol to allow sharing of any media type, and the ability to link
 servers together.
 
 %description -l pl
-Napster jest protoko³em wspó³dzielenia plików. Pliki pozostawiane s±
-u koñcowych u¿ytkowników, nigdy fizycznie nie przebywaj± na
-serwerze. Serwer umo¿liwia jedynie wyszukiwanie konkretnych plików i
-inicjuje bezpo¶redni transfer pomiêdzy u¿ytkownikami. Na dodatek
-zapewnia komunikacjê podobn± do IRCa. OpenNap rozszerza protokó³
-napstera o mo¿liwo¶æ wspó³dzielenia ka¿dego rodzaju plików oraz
-o mo¿liwo¶æ po³±czeñ miêdzyserwerowych.
+Napster jest protoko³em wspó³dzielenia plików. Pliki pozostawiane s± u
+koñcowych u¿ytkowników, nigdy fizycznie nie przebywaj± na serwerze.
+Serwer umo¿liwia jedynie wyszukiwanie konkretnych plików i inicjuje
+bezpo¶redni transfer pomiêdzy u¿ytkownikami. Na dodatek zapewnia
+komunikacjê podobn± do IRCa. OpenNap rozszerza protokó³ napstera o
+mo¿liwo¶æ wspó³dzielenia ka¿dego rodzaju plików oraz o mo¿liwo¶æ
+po³±czeñ miêdzyserwerowych.
 
 %prep
 %setup -q
@@ -38,13 +38,13 @@ o mo¿liwo¶æ po³±czeñ miêdzyserwerowych.
 %configure2_13 \
 	--enable-resume \
 	--enable-email \
-	--enable-log-channel 
+	--enable-log-channel
 
 #	--with-uid=opennap
 #	--with-gid=opennap
 #	--enable-chroot
 
-%{__make} 
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
