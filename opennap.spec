@@ -3,12 +3,15 @@ Summary(pl):	OpenNap jest powszechn± alternatyw± komercyjnego serwera Napster
 Name:		opennap
 Version:	0.43
 Release:	1
-License:	GPL
+License:	GPL v2
 Group:		Networking/Daemons
 URL:		http://opennap.sourceforge.net/
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/opennap/%{name}-%{version}.tar.gz
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
+Patch0:		%{name}-no_libnsl.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Prereq:		/sbin/chkconfig
@@ -33,9 +36,12 @@ po³±czeñ miêdzyserwerowych.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-%configure2_13 \
+%{__aclocal}
+%{__autoconf}
+%configure \
 	--enable-resume \
 	--enable-email \
 	--enable-log-channel
@@ -67,8 +73,6 @@ install	sample.users	$RPM_BUILD_ROOT%{_datadir}/opennap/users
 install %{SOURCE1} 	$RPM_BUILD_ROOT/etc/rc.d/init.d/opennap
 install %{SOURCE2}	$RPM_BUILD_ROOT/etc/sysconfig/opennap
 
-gzip -9nf AUTHORS NEWS README ChangeLog FAQ
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -95,7 +99,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS NEWS README ChangeLog FAQ
 %attr(755,root,root) %{_sbindir}/*
 %attr(750,opennap,opennap) %dir %{_datadir}/opennap
 %attr(640,opennap,opennap) %config(noreplace) %verify(not size mtime md5) %{_datadir}/opennap/*
