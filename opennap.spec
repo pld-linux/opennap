@@ -3,10 +3,10 @@ Summary(pl):	OpenNap jest powszechn± alternatyw± komercyjnego serwera Napster
 Name:		opennap
 Version:	0.41
 Release:	1
+License:	GPL
 Group:		Networking/Daemons
 Group(de):	Netzwerkwesen/Server
 Group(pl):	Sieciowe/Serwery
-License:	GPL
 URL:		http://opennap.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/opennap/%{name}-%{version}.tar.gz
 BuildRequires:	zlib-devel
@@ -64,12 +64,12 @@ install	sample.users	$RPM_BUILD_ROOT%{_sysconfdir}/opennap/users
 
 gzip -9nf AUTHORS NEWS README ChangeLog FAQ
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %files
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) %{_sbindir}/*
 %attr(750,opennap,opennap) %dir %{_sysconfdir}/opennap
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/opennap/*
-
-%clean
-rm -rf $RPM_BUILD_ROOT
