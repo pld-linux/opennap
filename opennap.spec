@@ -5,11 +5,11 @@ Version:	0.43
 Release:	1
 License:	GPL v2
 Group:		Networking/Daemons
-URL:		http://opennap.sourceforge.net/
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/opennap/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/opennap/%{name}-%{version}.tar.gz
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Patch0:		%{name}-no_libnsl.patch
+URL:		http://opennap.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	zlib-devel
