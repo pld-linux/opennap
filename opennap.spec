@@ -14,8 +14,9 @@ URL:		http://opennap.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	zlib-devel
+PreReq:		rc-scripts
+Requires(post,preun):	/sbin/chkconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Prereq:		/sbin/chkconfig
 
 %description
 Napster is a protocol for sharing files between users. With Napster,
