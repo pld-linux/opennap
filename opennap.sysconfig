@@ -1,0 +1,11 @@
+# Nice level for at
+SERVICE_RUN_NICE_LEVEL="+0"
+
+# Port. default=8888
+NAP_PORT="8888"
+
+# Uncomment this to get opennap listening on specified address:
+#NAP_ADDR="-l 156.17.220.99"
+
+# Uncomment this to get opennap channels may only be created by privileged users:
+#NAP_CHAN="-s"
