@@ -37,7 +37,7 @@ o mo¿liwo¶æ po³±czeñ miêdzyserwerowych.
 %setup -q
 
 %build
-%configure \
+%configure2_13 \
 	--enable-resume \
 	--enable-email \
 	--enable-log-channel 
