@@ -2,7 +2,7 @@ Summary:	OpenNap is a GNU version of the proprietary Napster server
 Summary(pl):	OpenNap jest powszechn± alternatyw± komercyjnego serwera Napster
 Name:		opennap
 Version:	0.42
-Release:	1
+Release:	2
 License:	GPL
 Group:		Networking/Daemons
 Group(de):	Netzwerkwesen/Server
@@ -13,6 +13,7 @@ Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Prereq:		/sbin/chkconfig
 
 %description
 Napster is a protocol for sharing files between users. With Napster,
@@ -55,7 +56,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/opennap \
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm $RPM_BUILD_ROOT%{_sbindir}/setup
+rm -f $RPM_BUILD_ROOT%{_sbindir}/setup
 
 install	sample.block	$RPM_BUILD_ROOT%{_datadir}/opennap/block
 install	sample.channels	$RPM_BUILD_ROOT%{_datadir}/opennap/channels
@@ -69,6 +70,9 @@ install %{SOURCE1} 	$RPM_BUILD_ROOT/etc/rc.d/init.d/opennap
 install %{SOURCE2}	$RPM_BUILD_ROOT/etc/sysconfig/opennap
 
 gzip -9nf AUTHORS NEWS README ChangeLog FAQ
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %post
 echo " "
@@ -90,10 +94,6 @@ if [ "$1" = "0" ];then
 	fi
 	/sbin/chkconfig --del opennap
 fi
-
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
