@@ -78,19 +78,10 @@ echo Default values are not wide usable!
 echo " "
 echo Please adjust /etc/sysconfig/opennap to change port or/and listening IP.
 echo " "
-echo "After adjusting please run:"
-echo "				 /sbin/chkconfig --add opennap"
-echo "				 /etc/rc.d/init.d/opennap start"
-echo " "
+%chkconfig_add
 
 %preun
-if [ "$1" = "0" ];then
-	if [ -f /var/lock/subsys/opennap ]; then
-		/etc/rc.d/init.d/opennap stop >&2
-	fi
-	/sbin/chkconfig --del opennap
-fi
-
+%chkconfig_del
 
 %clean
 rm -rf $RPM_BUILD_ROOT
