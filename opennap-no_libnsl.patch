@@ -1,0 +1,13 @@
+--- opennap-0.43/configure.in~	Fri Aug 30 20:38:32 2002
++++ opennap-0.43/configure.in	Fri Aug 30 20:38:32 2002
+@@ -26,8 +26,8 @@
+ fi
+ 
+ AC_CHECK_LIB(xnet,gethostbyname)
+-AC_CHECK_LIB(nsl,socket)
+-AC_CHECK_LIB(socket,gethostbyname)
++AC_CHECK_FUNC(socket, [], AC_CHECK_LIB(socket, socket))
++AC_CHECK_FUNC(gethostbyname, [], AC_CHECK_LIB(nsl, gethostbyname))
+ AC_CHECK_FUNCS(mlockall poll)
+ 
+ dnl see if we are compiling under Win32 or Unix
