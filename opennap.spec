@@ -14,8 +14,8 @@ URL:		http://opennap.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	zlib-devel
-PreReq:		rc-scripts
 Requires(post,preun):	/sbin/chkconfig
+Requires:	rc-scripts
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -104,6 +104,6 @@ fi
 %doc AUTHORS NEWS README ChangeLog FAQ
 %attr(755,root,root) %{_sbindir}/*
 %attr(750,opennap,opennap) %dir %{_datadir}/opennap
-%attr(640,opennap,opennap) %config(noreplace) %verify(not size mtime md5) %{_datadir}/opennap/*
+%attr(640,opennap,opennap) %config(noreplace) %verify(not md5 mtime size) %{_datadir}/opennap/*
 %attr(754,root,root) /etc/rc.d/init.d/opennap
-%config(noreplace) %verify(not size mtime md5) /etc/sysconfig/opennap
+%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/opennap
