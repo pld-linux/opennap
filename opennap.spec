@@ -1,5 +1,5 @@
 Summary:	OpenNap is a GNU version of the proprietary Napster server
-Summary(pl):	OpenNap jest powszechn± alternatyw± komercyjnego serwera Napster
+Summary(pl.UTF-8):   OpenNap jest powszechnÄ… alternatywÄ… komercyjnego serwera Napster
 Name:		opennap
 Version:	0.43
 Release:	1
@@ -27,14 +27,14 @@ forums similar to IRC are available. OpenNap extends the Napster
 protocol to allow sharing of any media type, and the ability to link
 servers together.
 
-%description -l pl
-Napster jest protoko³em wspó³dzielenia plików. Pliki pozostawiane s± u
-koñcowych u¿ytkowników, nigdy fizycznie nie przebywaj± na serwerze.
-Serwer umo¿liwia jedynie wyszukiwanie konkretnych plików i inicjuje
-bezpo¶redni transfer pomiêdzy u¿ytkownikami. Na dodatek zapewnia
-komunikacjê podobn± do IRCa. OpenNap rozszerza protokó³ napstera o
-mo¿liwo¶æ wspó³dzielenia ka¿dego rodzaju plików oraz o mo¿liwo¶æ
-po³±czeñ miêdzyserwerowych.
+%description -l pl.UTF-8
+Napster jest protokoÅ‚em wspÃ³Å‚dzielenia plikÃ³w. Pliki pozostawiane sÄ… u
+koÅ„cowych uÅ¼ytkownikÃ³w, nigdy fizycznie nie przebywajÄ… na serwerze.
+Serwer umoÅ¼liwia jedynie wyszukiwanie konkretnych plikÃ³w i inicjuje
+bezpoÅ›redni transfer pomiÄ™dzy uÅ¼ytkownikami. Na dodatek zapewnia
+komunikacjÄ™ podobnÄ… do IRCa. OpenNap rozszerza protokÃ³Å‚ napstera o
+moÅ¼liwoÅ›Ä‡ wspÃ³Å‚dzielenia kaÅ¼dego rodzaju plikÃ³w oraz o moÅ¼liwoÅ›Ä‡
+poÅ‚Ä…czeÅ„ miÄ™dzyserwerowych.
 
 %prep
 %setup -q
