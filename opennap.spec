@@ -1,5 +1,5 @@
 Summary:	OpenNap is a GNU version of the proprietary Napster server
-Summary(pl.UTF-8):   OpenNap jest powszechną alternatywą komercyjnego serwera Napster
+Summary(pl.UTF-8):	OpenNap jest powszechną alternatywą komercyjnego serwera Napster
 Name:		opennap
 Version:	0.43
 Release:	1
